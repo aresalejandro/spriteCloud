@@ -1,0 +1,17 @@
+{
+  "endpoint": "user/createWithList",
+  "headers": {
+  	"Content-Type": "application/json"
+  },
+  "body": [{
+    "id": "{{id}}",
+    "username": "test",
+    "firstName": "Alejandro",
+    "lastName": "ares",
+    "email": "ares@gmail.com",
+    "password": "test123",
+    "phone": "12345678",
+    "userStatus": 0
+  }]
+}
+

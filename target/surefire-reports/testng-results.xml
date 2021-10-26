@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="BDD Test Suite" duration-ms="4375" started-at="2021-10-26T14:21:37 ART" finished-at="2021-10-26T14:21:42 ART">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleEventWrapper, io.cucumber.testng.CucumberFeatureWrapper)[pri:0, instance:com.spritecloud.TestNGRunner@a8a26f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="Sprite Cloud Automation Tests" duration-ms="4375" started-at="2021-10-26T14:21:37 ART" finished-at="2021-10-26T14:21:42 ART">
+      <class name="com.spritecloud.TestNGRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.spritecloud.TestNGRunner@a8a26f]" name="setUpClass" is-config="true" duration-ms="131" started-at="2021-10-26T14:21:38 ART" finished-at="2021-10-26T14:21:38 ART">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleEventWrapper, io.cucumber.testng.CucumberFeatureWrapper)[pri:0, instance:com.spritecloud.TestNGRunner@a8a26f]" name="runScenario" duration-ms="2432" started-at="2021-10-26T14:21:38 ART" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-10-26T14:21:40 ART">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Scenarios Apis"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Sprite Cloud API Automation Test"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleEventWrapper, io.cucumber.testng.CucumberFeatureWrapper)[pri:0, instance:com.spritecloud.TestNGRunner@a8a26f]" name="runScenario" duration-ms="276" started-at="2021-10-26T14:21:40 ART" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-10-26T14:21:40 ART">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Scenarios Apis"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Sprite Cloud API Automation Test"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleEventWrapper, io.cucumber.testng.CucumberFeatureWrapper)[pri:0, instance:com.spritecloud.TestNGRunner@a8a26f]" name="runScenario" duration-ms="179" started-at="2021-10-26T14:21:40 ART" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-10-26T14:21:41 ART">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Scenarios Apis"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Sprite Cloud API Automation Test"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleEventWrapper, io.cucumber.testng.CucumberFeatureWrapper)[pri:0, instance:com.spritecloud.TestNGRunner@a8a26f]" name="runScenario" duration-ms="216" started-at="2021-10-26T14:21:41 ART" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-10-26T14:21:41 ART">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Scenarios Apis"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Sprite Cloud API Automation Test"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleEventWrapper, io.cucumber.testng.CucumberFeatureWrapper)[pri:0, instance:com.spritecloud.TestNGRunner@a8a26f]" name="runScenario" duration-ms="1010" started-at="2021-10-26T14:21:41 ART" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-10-26T14:21:42 ART">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Scenario Update Files"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Sprite Cloud API Automation Test"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.spritecloud.TestNGRunner@a8a26f]" name="tearDownClass" is-config="true" duration-ms="47" started-at="2021-10-26T14:21:42 ART" finished-at="2021-10-26T14:21:42 ART">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.spritecloud.TestNGRunner -->
+    </test> <!-- Sprite Cloud Automation Tests -->
+  </suite> <!-- BDD Test Suite -->
+</testng-results>
