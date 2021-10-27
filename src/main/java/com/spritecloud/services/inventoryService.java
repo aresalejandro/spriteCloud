@@ -1,6 +1,7 @@
 package com.spritecloud.services;
 
 import com.spritecloud.api.config.APIManager;
+import com.spritecloud.api.config.MyThreadLocal;
 import com.spritecloud.api.model.InventoryModel;
 import com.spritecloud.api.model.Request;
 import com.spritecloud.api.model.Response;
@@ -18,9 +19,9 @@ public class inventoryService extends MethodsService {
        return get(newRequest, InventoryModel.class);
     }
 
-    public void validateFields(Object actualResponse) {
+    public void validateFields(Object actualResponse) throws InterruptedException {
         InventoryModel inventory = (InventoryModel) APIManager.getLastResponse().getResponse();
-        Assert.assertEquals(inventory.getOk().toString(),"1");
+        Assert.assertTrue(inventory.getSold() < 10);
     }
 
 }

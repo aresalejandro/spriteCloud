@@ -16,7 +16,7 @@ public class deletePetIDService extends MethodsService {
 
     public static Response delete(String jsonName) throws IOException {
         Random rand = new Random();
-        Integer randomNum = rand.nextInt((10 - 1) + 1) + 1;
+        Integer randomNum = rand.nextInt((3 - 1) + 1) + 1;
 
         MyThreadLocal.setData("id",randomNum);
 

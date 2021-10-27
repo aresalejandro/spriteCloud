@@ -12,7 +12,7 @@ Feature: Sprite Cloud API Automation Test
       | GET       | INVENTORY   | storeInventory   | 200        |
       | POST      | CREATELIST  | createWithList   | 200        |
       | PUT       | PUTUSERNAME | putUserName      | 200        |
-      | DELETE    | DELETEPETID | deletePetID      | 200        |
+      #| DELETE    | DELETEPETID | deletePetID      | 200        |
 
 
   @apisTest

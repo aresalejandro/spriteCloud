@@ -5,17 +5,17 @@ import io.cucumber.datatable.dependency.com.fasterxml.jackson.annotation.JsonInc
 
 public class InventoryModel {
 
-    public Integer getOk() {
-        return ok;
+    public Integer getSold() {
+        return sold;
     }
 
-    public void setOk(Integer listPet) {
-        this.ok = listPet;
+    public void setSold(Integer sold) {
+        this.sold = sold;
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("OK")
-    private Integer ok;
+    @JsonProperty("sold")
+    private Integer sold;
 
 
 
