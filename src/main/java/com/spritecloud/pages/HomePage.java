@@ -51,7 +51,9 @@ public class HomePage extends PageCommons {
         click(By.cssSelector(TEXT_BOX));
     }
 
-    public void setFullName(String name) { setInput(By.id(FULL_NAME),name); }
+    public void setFullName(String name) {
+        waitForElementPresent(By.id(FULL_NAME));
+        setInput(By.id(FULL_NAME),name); }
 
     public void setEmail(String email) { setInput(By.id(EMAIL),email); }
 
