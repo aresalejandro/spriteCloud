@@ -1,0 +1,11 @@
+{
+  "endpoint": "pet/{{id}}/uploadImage",
+  "headers": {
+  	"Content-Type": "application/form-data",
+    "petId": "{{id}}"
+  },
+  "body": {
+    "file": "{{file}}"
+  }
+}
+

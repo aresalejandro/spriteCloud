@@ -142,6 +142,7 @@ public class HomePage extends PageCommons {
         waitForElementPresent(By.id(ALERT_CONFIRM));
         click(By.id(ALERT_CONFIRM));
 
+        Thread.sleep(2000);
         Alert alert = DriverService.getDriverInstance().switchTo().alert();
         alert.accept();
 
@@ -149,10 +150,11 @@ public class HomePage extends PageCommons {
     }
 
     public void clickAlertPrompt() throws InterruptedException {
+        Thread.sleep(2000);
         waitForElementPresent(By.id(ALERT_PROMPT));
         click(By.id(ALERT_PROMPT));
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         Alert alert = DriverService.getDriverInstance().switchTo().alert();
         alert.sendKeys("AlertTestAutomation");
         alert.accept();
@@ -177,12 +179,13 @@ public class HomePage extends PageCommons {
         Assert.assertTrue(alertMenssage);
     }
 
-    public void clickNewTab() {
+    public void clickNewTab() throws InterruptedException {
         ScrollDownToFindElement(By.xpath(BROWSER_WINDOWS));
         click(By.xpath(BROWSER_WINDOWS));
 
         waitForElementPresent(By.id(NEW_TAB));
         click(By.id(NEW_TAB));
+        Thread.sleep(2000);
     }
 
     public String getNewTabMenssage() {
@@ -211,6 +214,7 @@ public class HomePage extends PageCommons {
     }
 
     public void progressBar() throws InterruptedException {
+        Thread.sleep(2000);
         waitForElementPresent(By.id(PROGRESS_BAR_START));
         click(By.id(PROGRESS_BAR_START));
 

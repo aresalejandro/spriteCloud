@@ -96,7 +96,7 @@ public class HomeSteps {
     }
 
     @Then("The user select new tab")
-    public void newTab() {
+    public void newTab() throws InterruptedException {
         HomePage homeView = getHomeView();
         homeView.clickNewTab();
         homeView.windowsHandle();

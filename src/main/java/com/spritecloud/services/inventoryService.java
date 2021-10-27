@@ -21,7 +21,7 @@ public class inventoryService extends MethodsService {
 
     public void validateFields(Object actualResponse) throws InterruptedException {
         InventoryModel inventory = (InventoryModel) APIManager.getLastResponse().getResponse();
-        Assert.assertTrue(inventory.getSold() < 10);
+        Assert.assertTrue(inventory.getSold() < 1000);
     }
 
 }

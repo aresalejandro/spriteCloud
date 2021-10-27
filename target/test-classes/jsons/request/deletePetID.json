@@ -1,0 +1,7 @@
+{
+  "endpoint": "pet/{{id}}",
+  "headers": {
+  	"Content-Type": "application/json"
+  }
+}
+
