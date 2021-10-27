@@ -1,7 +1,0 @@
-{
-  "endpoint": "store/inventory",
-  "headers": {
-  	"Content-Type": "application/json"
-  }
-}
-

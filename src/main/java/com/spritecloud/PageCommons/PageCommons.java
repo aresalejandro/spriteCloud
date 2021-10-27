@@ -6,6 +6,7 @@ import com.spritecloud.core.PropertyManager;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public abstract class PageCommons {
@@ -58,10 +59,16 @@ public abstract class PageCommons {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
+
     public void ScrollDownToFindElement(By locator) {
         WebDriver driver = DriverService.getDriverInstance();
         WebElement element = getElement(locator);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
+    public void windowsHandle(){
+        WebDriver driver = DriverService.getDriverInstance();
+        ArrayList<String> tab = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tab.get(1));
+    }
 }

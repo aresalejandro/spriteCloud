@@ -11,6 +11,8 @@ public class HomeSteps {
 
     private final String MENSSAGE_ELEMENT_BOX = "Please select an item from left to start practice.";
     private final String MESSAGE_CHECK_BOX = "You have selected :";
+    private final String MENSSAGE_NEW_TAB = "This is a sample page";
+
     private HomePage homeView;
     
     private HomePage getHomeView() {
@@ -69,5 +71,70 @@ public class HomeSteps {
         homeView.clickUploadFile();
         homeView.uploadImage();
         Assert.assertTrue(homeView.isUploadFileCorrectyl());
+    }
+
+    @When("The user go to Alerts box")
+    public void alertBox() {
+        HomePage homeView = getHomeView();
+        homeView.clickBoxElement("3");
+        Assert.assertEquals(homeView.getMenssageElement(),MENSSAGE_ELEMENT_BOX);
+    }
+
+    @Then("The user select alert: (.*)")
+    public void alertTypes(String alert) throws InterruptedException {
+        HomePage homeView = getHomeView();
+        homeView.clickAlert();
+        switch (alert){
+            case "CONFIRM" : homeView.clickAlertConfirm();
+                break;
+            case "TIMER" : homeView.clickAlertTime();
+                break;
+            case "PROMPT" : homeView.clickAlertPrompt();
+            break;
+        }
+
+    }
+
+    @Then("The user select new tab")
+    public void newTab() {
+        HomePage homeView = getHomeView();
+        homeView.clickNewTab();
+        homeView.windowsHandle();
+        Assert.assertEquals(homeView.getNewTabMenssage(),MENSSAGE_NEW_TAB);
+    }
+
+    @When("The user go to Widgets box")
+    public void widgets() {
+        HomePage homeView = getHomeView();
+        homeView.clickBoxElement("4");
+        Assert.assertEquals(homeView.getMenssageElement(),MENSSAGE_ELEMENT_BOX);
+    }
+
+    @Then("The user select Slider")
+    public void slider() throws InterruptedException {
+        HomePage homeView = getHomeView();
+        homeView.clickSlider();
+        homeView.slider();
+    }
+
+    @Then("The user select Progress Bar")
+    public void progressBar() throws InterruptedException {
+        HomePage homeView = getHomeView();
+        homeView.clickProgressBar();
+        homeView.progressBar();
+    }
+
+    @When("The user go to Interactions box")
+    public void interactions() {
+        HomePage homeView = getHomeView();
+        homeView.clickBoxElement("5");
+        Assert.assertEquals(homeView.getMenssageElement(),MENSSAGE_ELEMENT_BOX);
+    }
+
+    @Then("The user select Dragabble")
+    public void dragaBble() throws InterruptedException {
+        HomePage homeView = getHomeView();
+        homeView.clickdragabble();
+        homeView.dragabble();
     }
 }

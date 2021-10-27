@@ -19,14 +19,15 @@ public class Hooks {
     @After
     public void afterScenario(Scenario scenario) {
         Logger.getRootLogger().info(" ending -----------" + scenario.getName() + "-----------");
-        /*
-        if (scenario.isFailed()) {
-            scenario.embed(((TakesScreenshot) DriverService
-                    .getDriverInstance()).getScreenshotAs(OutputType.BYTES), "image/png");
+        System.out.println(scenario.getSourceTagNames());
+
+        if (scenario.getSourceTagNames().contains("@FrontEnd")){
+            if (scenario.isFailed()) {
+                scenario.embed(((TakesScreenshot) DriverService
+                        .getDriverInstance()).getScreenshotAs(OutputType.BYTES), "image/png");
+            }
             DriverService.dismissDriver();
         }
-        */
-
-        //DriverService.dismissDriver();
     }
+
 }

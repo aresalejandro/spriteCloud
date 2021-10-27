@@ -1,4 +1,4 @@
-@API
+@API @regression
 Feature: Sprite Cloud API Automation Test
 
   @apisTest

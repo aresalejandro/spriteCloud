@@ -1,6 +1,5 @@
 package com.spritecloud.core;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,11 +16,11 @@ public enum ProjectType {
 
         @Override
         public WebDriver initDriver() {
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--headless");
-            return new ChromeDriver(options);
+            //ChromeOptions options = new ChromeOptions();
+            //options.addArguments("--no-sandbox");
+            //options.addArguments("--disable-dev-shm-usage");
+            //options.addArguments("--headless");
+            return new ChromeDriver();
         }
     },
     FIREFOX {

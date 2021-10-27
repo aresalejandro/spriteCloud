@@ -1,17 +1,20 @@
 package com.spritecloud.pages;
 
 import com.spritecloud.core.DriverService;
-import io.cucumber.java8.Th;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import com.spritecloud.PageCommons.PageCommons;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 import java.io.File;
 import java.nio.file.Paths;
+import java.sql.Driver;
 import java.util.List;
-import java.util.Locale;
+
 
 public class HomePage extends PageCommons {
 
@@ -32,6 +35,24 @@ public class HomePage extends PageCommons {
     private final String PERMANENT_ADDRES = "permanentAddress";
     private final String BUTTON_SUBMIT = "submit";
     private final String OUTPUT_MENSSAGE = "output";
+    private final String ALERTS = "//*[@id=\"item-1\"]/span[text()='Alerts']";
+    private final String ALERT_CONFIRM = "confirmButton";
+    private final String ALERT_CONFIRM_MENSSAGE = "confirmResult";
+    private final String ALERT_PROMPT = "promtButton";
+    private final String ALERT_PROMPT_MENSSAGE = "promptResult";
+    private final String ALERT_TIMER = "timerAlertButton";
+    private final String BROWSER_WINDOWS = "//*[@id=\"item-0\"]/span[text()='Browser Windows']";
+    private final String NEW_TAB = "tabButton";
+    private final String NEW_TAB_MENSSAGE = "sampleHeading";
+    private final String SLIDER_BOX = "//*[@id=\"item-3\"]/span[text()='Slider']";
+    private final String SLIDER = "sliderContainer";
+    private final String PROGRESS_BAR_BOX = "//*[@id=\"item-4\"]/span[text()='Progress Bar']";
+    private final String PROGRESS_BAR_START = "startStopButton";
+    private final String PROGRESS_BAR = "#progressBar > div";
+    private final String DRAGABBLE_BOX = "//*[@id=\"item-4\"]/span[text()='Dragabble']";
+    private final String DRAGABBLE = "dragBox";
+
+
 
     public boolean isHomeDisplayed() {
         return isPresent(By.xpath(ELEMENT_BOX.replace("{{s}}", "1")));
@@ -112,4 +133,111 @@ public class HomePage extends PageCommons {
     }
 
 
+    public void clickAlert() {
+        ScrollDownToFindElement(By.xpath(ALERTS));
+        click(By.xpath(ALERTS)); }
+
+    public void clickAlertConfirm() throws InterruptedException {
+        Thread.sleep(2000);
+        waitForElementPresent(By.id(ALERT_CONFIRM));
+        click(By.id(ALERT_CONFIRM));
+
+        Alert alert = DriverService.getDriverInstance().switchTo().alert();
+        alert.accept();
+
+        Assert.assertTrue(isPresent(By.id(ALERT_CONFIRM_MENSSAGE)));
+    }
+
+    public void clickAlertPrompt() throws InterruptedException {
+        waitForElementPresent(By.id(ALERT_PROMPT));
+        click(By.id(ALERT_PROMPT));
+
+        Thread.sleep(1000);
+        Alert alert = DriverService.getDriverInstance().switchTo().alert();
+        alert.sendKeys("AlertTestAutomation");
+        alert.accept();
+
+        Assert.assertTrue(isPresent(By.id(ALERT_PROMPT_MENSSAGE)));
+    }
+
+    public void clickAlertTime() throws InterruptedException {
+        waitForElementPresent(By.id(ALERT_TIMER));
+        click(By.id(ALERT_TIMER));
+        Thread.sleep(5000);
+
+        Alert alert = DriverService.getDriverInstance().switchTo().alert();
+        Boolean alertMenssage = null;
+        if(alert == null){
+            alertMenssage = false;
+        }else {
+            alert.accept();
+            alertMenssage = true;
+        }
+
+        Assert.assertTrue(alertMenssage);
+    }
+
+    public void clickNewTab() {
+        ScrollDownToFindElement(By.xpath(BROWSER_WINDOWS));
+        click(By.xpath(BROWSER_WINDOWS));
+
+        waitForElementPresent(By.id(NEW_TAB));
+        click(By.id(NEW_TAB));
+    }
+
+    public String getNewTabMenssage() {
+        return getText(By.id(NEW_TAB_MENSSAGE)); }
+
+    public void clickSlider() {
+        ScrollDownToFindElement(By.xpath(SLIDER_BOX));
+        click(By.xpath(SLIDER_BOX));
+    }
+
+    public void slider() throws InterruptedException {
+        WebElement slider = getElement(By.id(SLIDER));
+        Actions SliderAction = new Actions(DriverService.getDriverInstance());
+        SliderAction.click(slider).build().perform();
+        Thread.sleep(1000);
+        for (int i = 0; i < 5; i++)
+        {
+            SliderAction.sendKeys(Keys.ARROW_LEFT).build().perform();
+            Thread.sleep(200);
+        }
+    }
+
+    public void clickProgressBar() {
+        ScrollDownToFindElement(By.xpath(PROGRESS_BAR_BOX));
+        click(By.xpath(PROGRESS_BAR_BOX));
+    }
+
+    public void progressBar() throws InterruptedException {
+        waitForElementPresent(By.id(PROGRESS_BAR_START));
+        click(By.id(PROGRESS_BAR_START));
+
+        WebElement progress_bar = getElement(By.cssSelector(PROGRESS_BAR));
+        Boolean finish = false;
+        for(int second = 0; second <= 30; second++) {
+            System.out.println(progress_bar.getAttribute("class"));
+            if(progress_bar.getAttribute("class").contains("progress-bar bg-success")){
+                finish = true;
+                break;
+            }else{
+                Thread.sleep(1000);
+            }
+        }
+        Assert.assertTrue(finish);
+    }
+
+    public void clickdragabble() throws InterruptedException {
+        ScrollDownToFindElement(By.xpath(DRAGABBLE_BOX));
+        click(By.xpath(DRAGABBLE_BOX));
+        Thread.sleep(1000);
+    }
+
+    public void dragabble(){
+        ScrollDownToFindElement(By.id(DRAGABBLE));
+        WebElement dragabble = getElement(By.id(DRAGABBLE));
+        Actions DragabbleAction = new Actions(DriverService.getDriverInstance());
+        DragabbleAction.click(dragabble).clickAndHold().moveByOffset(150,150).moveByOffset(0, 200).release().perform();
+    }
 }
