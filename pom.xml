@@ -13,7 +13,7 @@
         <base.api>https://petstore.swagger.io/v2/</base.api>
         <cucumber.version>4.8.1</cucumber.version>
         <selenium.version>3.141.59</selenium.version>
-        <cucumber.filter>@FrontEnd</cucumber.filter>
+        <cucumber.filter>@API</cucumber.filter>
         <cucumber.options>src/test/resources/features --glue com/spritecloud --tags ${cucumber.filter} --tags 'not @Bug' -p 'html:target/cucumber-reports'</cucumber.options>
     </properties>
     <profiles>
