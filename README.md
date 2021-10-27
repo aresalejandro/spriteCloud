@@ -94,4 +94,3 @@ Try to add the most complex cases as there are many ways to do it.
 
 ## AddInformation
 I want to mention that there is an API case, DELETE is commented, since when eliminating it, it returns 404. Try with other IDs, but it always returns the same.
-Also clarify that when you want to run the pipelines with Chrome Headless, there are cases that fail, such as the slider, etc.
